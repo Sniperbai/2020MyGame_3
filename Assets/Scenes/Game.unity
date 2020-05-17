@@ -211,30 +211,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1116356405, guid: bdacf6c7a6436486ea1cac134f7a3b89, type: 3}
-      propertyPath: tankSprite.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116356405, guid: bdacf6c7a6436486ea1cac134f7a3b89, type: 3}
-      propertyPath: tankSprite.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: c3a4b3c783ddce7438622efbc82d5538,
-        type: 3}
-    - target: {fileID: 1116356405, guid: bdacf6c7a6436486ea1cac134f7a3b89, type: 3}
-      propertyPath: tankSprite.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300016, guid: c3a4b3c783ddce7438622efbc82d5538,
-        type: 3}
-    - target: {fileID: 1116356405, guid: bdacf6c7a6436486ea1cac134f7a3b89, type: 3}
-      propertyPath: tankSprite.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300032, guid: c3a4b3c783ddce7438622efbc82d5538,
-        type: 3}
-    - target: {fileID: 1116356405, guid: bdacf6c7a6436486ea1cac134f7a3b89, type: 3}
-      propertyPath: tankSprite.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300048, guid: c3a4b3c783ddce7438622efbc82d5538,
-        type: 3}
     - target: {fileID: 334230132820758820, guid: bdacf6c7a6436486ea1cac134f7a3b89,
         type: 3}
       propertyPath: m_LocalPosition.x

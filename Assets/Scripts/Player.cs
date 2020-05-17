@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     private void Move()
     {
         float v = Input.GetAxisRaw("Vertical");
-        transform.Translate(Vector3.up * v * moveSpeed * Time.deltaTime, Space.World);
+        transform.Translate(Vector3.up * v * moveSpeed * Time.fixedDeltaTime, Space.World);
 
         if (v < 0)
         {
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
         }
 
         float h = Input.GetAxisRaw("Horizontal");
-        transform.Translate(Vector3.right * h * moveSpeed * Time.deltaTime, Space.World);
+        transform.Translate(Vector3.right * h * moveSpeed * Time.fixedDeltaTime, Space.World);
         //注：Time.deltaTime（按每秒移动 不加是按没帧移动） Space.World（按世界坐标轴移动）
 
         if (h < 0)
