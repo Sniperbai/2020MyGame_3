@@ -6,10 +6,13 @@ public class Player : MonoBehaviour
 {
     //属性值
     public float moveSpeed = 3;
+    private Vector3 bulletEulerAngles;
+    
 
     //引用
     private SpriteRenderer sr;
     public Sprite[] tankSprite;  //上 右 下 左
+    public GameObject bulletPrefab;
 
     //初始化
     private void Awake()
@@ -20,9 +23,19 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-
+        Attack();
         
     }
+
+    //坦克的攻击方法
+    private void Attack()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(bulletPrefab, transform.position, Quaternion.Euler(transform.eulerAngles+bulletEulerAngles));
+        }
+    }
+
 
     //坦克的移动方法
     private void Move()
@@ -33,10 +46,12 @@ public class Player : MonoBehaviour
         if (v < 0)
         {
             sr.sprite = tankSprite[2];
+            bulletEulerAngles = new Vector3(0, 0, -180);
         }
         else if (v > 0)
         {
             sr.sprite = tankSprite[0];
+            bulletEulerAngles = new Vector3(0, 0, 0);
         }
 
         if (v != 0)
@@ -51,10 +66,12 @@ public class Player : MonoBehaviour
         if (h < 0)
         {
             sr.sprite = tankSprite[3];
+            bulletEulerAngles = new Vector3(0, 0, 90);
         }
         else if (h > 0)
         {
             sr.sprite = tankSprite[1];
+            bulletEulerAngles = new Vector3(0,0,-90);
         }
     }
 }
