@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     //属性值
     public float moveSpeed = 3;
     private Vector3 bulletEulerAngles;
+    private float timeVal;
     
 
     //引用
@@ -20,10 +21,22 @@ public class Player : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
+    void Update()
+    {
+        if (timeVal >= 0.4f)
+        {
+            Attack();
+        }
+        else
+        {
+            timeVal += Time.deltaTime;
+        }
+    }
+
     private void FixedUpdate()
     {
         Move();
-        Attack();
+        
         
     }
 
@@ -32,7 +45,9 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            //子弹产生的角度：当前坦克的角度+子弹应该旋转的角度
             Instantiate(bulletPrefab, transform.position, Quaternion.Euler(transform.eulerAngles+bulletEulerAngles));
+            timeVal = 0;
         }
     }
 
