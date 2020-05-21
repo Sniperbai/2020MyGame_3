@@ -20,6 +20,21 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //TODO
+        switch (collision.tag)
+        {
+            case "Tank":
+                break;
+            case "Heart":
+                break;
+            case "Enemy":
+                break;
+            case "Wall":
+                break;
+            case "Barrier":
+                break;
+
+            default:
+                break;
+        }
     }
 }
