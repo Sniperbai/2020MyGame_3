@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour
         switch (collision.tag)
         {
             case "Tank":
+                collision.SendMessage("Die");
                 break;
             case "Heart":
                 break;

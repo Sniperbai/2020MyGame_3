@@ -8,12 +8,16 @@ public class Player : MonoBehaviour
     public float moveSpeed = 3;
     private Vector3 bulletEulerAngles;
     private float timeVal;
+    private float defendTimeVal = 3;   
+    private bool isDefend = true;
     
 
     //引用
     private SpriteRenderer sr;
     public Sprite[] tankSprite;  //上 右 下 左
     public GameObject bulletPrefab;
+    public GameObject explosionPrefab;
+    public GameObject defendEffectPrefab;
 
     //初始化
     private void Awake()
@@ -23,6 +27,19 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        //是否处于无敌状态
+        if (isDefend)
+        {
+            defendEffectPrefab.SetActive(true);
+            defendTimeVal -= Time.deltaTime;
+            if (defendTimeVal <= 0)
+            {
+                isDefend = false;
+                defendEffectPrefab.SetActive(false);
+            }
+        }
+
+        //攻击的CD
         if (timeVal >= 0.4f)
         {
             Attack();
@@ -35,9 +52,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
-        
-        
+        Move();   
     }
 
     //坦克的攻击方法
@@ -88,5 +103,21 @@ public class Player : MonoBehaviour
             sr.sprite = tankSprite[1];
             bulletEulerAngles = new Vector3(0,0,-90);
         }
+    }
+
+
+    //坦克的死亡方法
+    private void Die()
+    {
+        if (isDefend)
+        {
+            return;
+        }
+
+        //播放爆炸特效
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
+
+        //死亡
+        Destroy(gameObject);
     }
 }
