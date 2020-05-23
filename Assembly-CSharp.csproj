@@ -57,6 +57,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\Explosion.cs" />
+     <Compile Include="Assets\Scripts\Heart.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>E:/UnityProject/2020MyGame_3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

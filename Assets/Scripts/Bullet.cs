@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float moveSpeed = 10;
+    public bool isPlayerBullet;
 
     // Start is called before the first frame update
     void Start()
@@ -23,15 +24,23 @@ public class Bullet : MonoBehaviour
         switch (collision.tag)
         {
             case "Tank":
-                collision.SendMessage("Die");
+                if (!isPlayerBullet)
+                {
+                    collision.SendMessage("Die");
+                }
                 break;
             case "Heart":
+                collision.SendMessage("Die");
+                Destroy(gameObject);
                 break;
             case "Enemy":
                 break;
             case "Wall":
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
                 break;
             case "Barrier":
+                Destroy(gameObject);
                 break;
 
             default:
