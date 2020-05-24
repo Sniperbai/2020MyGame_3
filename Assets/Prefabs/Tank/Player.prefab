@@ -103,8 +103,10 @@ MonoBehaviour:
   - {fileID: 21300016, guid: c3a4b3c783ddce7438622efbc82d5538, type: 3}
   - {fileID: 21300032, guid: c3a4b3c783ddce7438622efbc82d5538, type: 3}
   - {fileID: 21300048, guid: c3a4b3c783ddce7438622efbc82d5538, type: 3}
-  bulletPrefab: {fileID: 0}
-  explosionPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 6351297932127339478, guid: 862b2d2adeb214c5589e48c29c2f2e57,
+    type: 3}
+  explosionPrefab: {fileID: 6905327713060037640, guid: bc43d00356ba7428884ede37764966a2,
+    type: 3}
   defendEffectPrefab: {fileID: 8786845546612085533}
 --- !u!61 &2012003791139010941
 BoxCollider2D:

@@ -5,7 +5,9 @@ using UnityEngine;
 public class Heart : MonoBehaviour
 {
     private SpriteRenderer sr;
-    public Sprite BrokenSprite; 
+    public Sprite BrokenSprite;
+
+    public GameObject explosionPrefab;
 
 
     // Start is called before the first frame update
@@ -16,7 +18,11 @@ public class Heart : MonoBehaviour
 
     public void Die()
     {
+        
         sr.sprite = BrokenSprite;
+
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
+
     }
 
 }
