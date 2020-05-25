@@ -6,6 +6,10 @@ public class Born : MonoBehaviour
 {
     public GameObject playerPrefab;
 
+    public GameObject[] enemyPrefabList;
+
+    public bool createPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +25,15 @@ public class Born : MonoBehaviour
 
     private void BornTank()
     {
-        Instantiate(playerPrefab, transform.position, Quaternion.identity);
+        if (createPlayer)
+        {
+            Instantiate(playerPrefab, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            int num = Random.Range(0, 2);
+            Instantiate(enemyPrefabList[num], transform.position, Quaternion.identity);
+        } 
     }
 
 }
