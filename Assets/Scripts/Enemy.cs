@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
     {
         //子弹产生的角度：当前坦克的角度+子弹应该旋转的角度
         Instantiate(bulletPrefab, transform.position, Quaternion.Euler(transform.eulerAngles + bulletEulerAngles));
-        timeVal = 3;
+        timeVal = 1;
     }
 
 

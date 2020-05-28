@@ -39,6 +39,37 @@ public class MapCreation : MonoBehaviour
         {
             CreateItem(item[6], new Vector3(11, i, 0), Quaternion.identity);
         }
+
+        //初始化玩家
+        GameObject go = Instantiate(item[3], new Vector3(-2, -8, 0), Quaternion.identity);
+        go.GetComponent<Born>().createPlayer = true;
+
+        //产生敌人
+        CreateItem(item[3], new Vector3(-10, 8, 0), Quaternion.identity);
+        CreateItem(item[3], new Vector3(0, 8, 0), Quaternion.identity);
+        CreateItem(item[3], new Vector3(10, 8, 0), Quaternion.identity);
+
+        InvokeRepeating("CreateEnemy", 4, 5);
+
+        //实例化地图
+        for (int i = 0; i < 60; i++)
+        {
+            CreateItem(item[1], CreateRandomPosition(), Quaternion.identity);
+        }
+        for (int i = 0; i < 20; i++)
+        {
+            CreateItem(item[2], CreateRandomPosition(), Quaternion.identity);
+        }
+        for (int i = 0; i < 20; i++)
+        {
+            CreateItem(item[4], CreateRandomPosition(), Quaternion.identity);
+        }
+        for (int i = 0; i < 20; i++)
+        {
+            CreateItem(item[5], CreateRandomPosition(), Quaternion.identity);
+        }
+
+
     }
 
     private void CreateItem(GameObject createGameObject, Vector3 createPosition, Quaternion createRotation)
@@ -77,5 +108,26 @@ public class MapCreation : MonoBehaviour
         }
 
         return false;
+    }
+
+    //产生敌人的方法
+    private void CreateEnemy()
+    {
+        int num = Random.Range(0, 3);
+        Vector3 EnemyPos = new Vector3();
+
+        if (num == 0)
+        {
+            EnemyPos = new Vector3(-10, 8, 0);
+        }
+        else if (num == 1)
+        {
+            EnemyPos = new Vector3(0, 8, 0);
+        }
+        else
+        {
+            EnemyPos = new Vector3(10, 8, 0);
+        }
+        CreateItem(item[3], EnemyPos, Quaternion.identity);
     }
 }

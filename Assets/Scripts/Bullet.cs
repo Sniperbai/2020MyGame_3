@@ -27,8 +27,8 @@ public class Bullet : MonoBehaviour
                 if (!isPlayerBullet)
                 {
                     collision.SendMessage("Die");
+                    Destroy(gameObject);
                 }
-                Destroy(gameObject);
                 break;
             case "Heart":
                 collision.SendMessage("Die");
@@ -38,8 +38,8 @@ public class Bullet : MonoBehaviour
                 if (isPlayerBullet)
                 {
                     collision.SendMessage("Die");
-                }
-                Destroy(gameObject);
+                    Destroy(gameObject);
+                }  
                 break;
             case "Wall":
                 Destroy(collision.gameObject);
