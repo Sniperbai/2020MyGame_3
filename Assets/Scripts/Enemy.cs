@@ -133,4 +133,17 @@ public class Enemy : MonoBehaviour
         //死亡
         Destroy(gameObject);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            timeValChangeDirection = 4;
+        }
+
+        if (collision.gameObject.tag == "Barrier")
+        {
+            timeValChangeDirection = 4;
+        }
+    }
 }
