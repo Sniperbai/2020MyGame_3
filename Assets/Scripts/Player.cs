@@ -109,10 +109,14 @@ public class Player : MonoBehaviour
     //坦克的死亡方法
     private void Die()
     {
+        
+
         if (isDefend)
         {
             return;
         }
+
+        PlayerManager.Instance.isDead = true;
 
         //播放爆炸特效
         Instantiate(explosionPrefab, transform.position, transform.rotation);

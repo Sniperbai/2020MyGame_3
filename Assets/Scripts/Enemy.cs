@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {//属性值
     public float moveSpeed = 3;
     private Vector3 bulletEulerAngles;
-    private float v;
+    private float v = -1;
     private float h;
 
 
@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
 
     //计时器
     private float timeVal;
-    private float timeValChangeDirection = 4;
+    private float timeValChangeDirection;
 
     //初始化
     private void Awake()
@@ -125,7 +125,7 @@ public class Enemy : MonoBehaviour
     //坦克的死亡方法
     private void Die()
     {
-        
+        PlayerManager.Instance.playerScore++;
 
         //播放爆炸特效
         Instantiate(explosionPrefab, transform.position, transform.rotation);
