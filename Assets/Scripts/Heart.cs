@@ -23,6 +23,8 @@ public class Heart : MonoBehaviour
 
         Instantiate(explosionPrefab, transform.position, transform.rotation);
 
+        PlayerManager.Instance.isDefead = true;
+
     }
 
 }

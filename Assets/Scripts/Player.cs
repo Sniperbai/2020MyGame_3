@@ -39,6 +39,16 @@ public class Player : MonoBehaviour
             }
         }
 
+        
+    }
+
+    private void FixedUpdate()
+    {
+        if (PlayerManager.Instance.isDefead) 
+        {
+            return;
+        }
+        Move();
         //攻击的CD
         if (timeVal >= 0.4f)
         {
@@ -46,13 +56,8 @@ public class Player : MonoBehaviour
         }
         else
         {
-            timeVal += Time.deltaTime;
+            timeVal += Time.fixedDeltaTime;
         }
-    }
-
-    private void FixedUpdate()
-    {
-        Move();   
     }
 
     //坦克的攻击方法
