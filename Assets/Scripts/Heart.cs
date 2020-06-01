@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Heart : MonoBehaviour
 {
     private SpriteRenderer sr;
     public Sprite BrokenSprite;
+    public AudioClip dieAudio;
 
     public GameObject explosionPrefab;
 
@@ -24,7 +26,15 @@ public class Heart : MonoBehaviour
         Instantiate(explosionPrefab, transform.position, transform.rotation);
 
         PlayerManager.Instance.isDefead = true;
+        AudioSource.PlayClipAtPoint(dieAudio, transform.position);
+
+        //Invoke("ReturnToTheMainMenu", 3);
 
     }
+
+    //public void ReturnToTheMainMenu()
+    //{
+    //    SceneManager.LoadScene(0);
+    //}
 
 }

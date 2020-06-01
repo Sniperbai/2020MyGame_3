@@ -1,11 +1,15 @@
 ﻿<Properties StartupConfiguration="{B2210A84-865F-B8C5-C2E8-9ABFBD0319B2}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Heart.cs">
     <Files>
-      <File FileName="Assets/Scripts/Bullet.cs" Line="34" Column="46" />
-      <File FileName="Assets/Scripts/Player.cs" />
-      <File FileName="Assets/Scripts/Born.cs" />
+      <File FileName="Assets/Scripts/Bullet.cs" Line="51" Column="56" />
+      <File FileName="Assets/Scripts/Player.cs" Line="134" Column="10" />
+      <File FileName="Assets/Scripts/Born.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Enemy.cs" Line="147" Column="10" />
-      <File FileName="Assets/Scripts/MapCreation.cs" />
+      <File FileName="Assets/Scripts/MapCreation.cs" Line="16" Column="19" />
+      <File FileName="Assets/Scripts/Option.cs" Line="33" Column="39" />
+      <File FileName="Assets/Scripts/PlayerManager.cs" Line="54" Column="46" />
+      <File FileName="Assets/Scripts/Heart.cs" Line="32" Column="1" />
+      <File FileName="Assets/Scripts/Barrier.cs" Line="11" Column="67" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

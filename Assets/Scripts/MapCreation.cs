@@ -13,6 +13,11 @@ public class MapCreation : MonoBehaviour
 
     private void Awake()
     {
+        InitMap();
+    }
+
+    private void InitMap()
+    {
         //实例化老家
         CreateItem(item[0], new Vector3(0, -8, 0), Quaternion.identity);
         //用墙把老家围起来

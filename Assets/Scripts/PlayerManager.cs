@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
@@ -50,6 +51,7 @@ public class PlayerManager : MonoBehaviour
         if (isDefead) 
         {
             isDefeatUI.SetActive(true);
+            Invoke("ReturnToTheMainMenu", 3);
             return;
         }
 
@@ -67,6 +69,7 @@ public class PlayerManager : MonoBehaviour
         {
             //游戏失败，返回主界面
             isDefead = true;
+            Invoke("ReturnToTheMainMenu", 3);
 
         }
         else 
@@ -78,6 +81,11 @@ public class PlayerManager : MonoBehaviour
         
         }
     
+    }
+
+    public void ReturnToTheMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }
